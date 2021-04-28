@@ -41,7 +41,8 @@ EOF
 if [[ -n ${DOMAIN_EXT} ]]
 then
     IFS=","
-    DNS=(${DOMAIN_EXT})
+    DNS=(${DOMAIN})
+    DNS+=(${DOMAIN_EXT})
     for i in ${!DNS[@]} 
     do
         echo DNS.${i} "=" ${DNS[$i]} >> ${DOMAIN}/csr.conf
